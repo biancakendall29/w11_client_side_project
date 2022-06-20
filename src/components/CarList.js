@@ -17,5 +17,4 @@ const CarList = ({cars}) => {
     )
 }
 
-h3
-export default CarList;t;
+export default CarList;
