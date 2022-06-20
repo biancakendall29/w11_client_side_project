@@ -11,7 +11,7 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
     )
 
     // define signed in customer variable to null. This will be a customer email address
-    let signedInCustomer = "";
+    const [stateCustomerEmail, setStateCustomerEmail] = useState("");
 
     // saves new customer data to state
     const handleChange = (event) => {
@@ -29,14 +29,16 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
 
     // sets signed in customer variable to the email input in sign in form
     const handleSignInChange = (event) => {
-        signedInCustomer = event.target.value; //only saves email address
+        let copiedStateCustomerEmail = {...stateCustomer};
+        copiedStateCustomerEmail = event.target.value; //only saves email address
+        setStateCustomerEmail(copiedStateCustomerEmail);
     }
 
     // triggers function in App.js that filters through customer database, comparing emails
     // to the signed in customer variable.
     const handleFormSignInSubmit = (event) => {
         event.preventDefault();
-        filterCustomers(signedInCustomer);
+        filterCustomers(stateCustomerEmail);
     }
 
     return (
@@ -54,7 +56,7 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
         <form onSubmit={handleFormSignInSubmit}>
             <h2>Sign in !</h2>
             <label>Email address:</label>
-            <input type="text" placeholder="Email" onChange={handleSignInChange}></input>
+            <input type="text" placeholder="Email" onChange={handleSignInChange} value={stateCustomerEmail}></input>
             <button type="submit">SIGN IN</button>
         </form>
         </>

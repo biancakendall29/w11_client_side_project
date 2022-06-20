@@ -4,8 +4,6 @@ import './App.css';
 import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
-
-
 function App() {
 
 const [cars, setCars] = useState([]);
@@ -36,6 +34,15 @@ const postCustomer = (newCustomer) => {
   .then(data => setCustomers([...customers, data]))
 }
 
+const [signedInCustomer, setSignedInCustomer] = useState([]);
+
+const filterCustomers = (signedInCustomerEmail) => {
+  customers.filter(customer => {
+    setSignedInCustomer (customer.emailAddress === signedInCustomerEmail)
+  });
+  console.log(signedInCustomer);
+}
+
   return (
     <>
     <div className="nav">
@@ -49,9 +56,9 @@ const postCustomer = (newCustomer) => {
         </ul>
 
         <Routes>
-            <Route path="/" element={<HomeContainer cars={cars}/>} />
+            <Route path="/" element={<HomeContainer cars={cars} signedInCustomer={signedInCustomer}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
-                  filterCustomers={filterCustomers}/>} />
+                   filterCustomers={filterCustomers} />} />
 
         </Routes>
     </Router>
