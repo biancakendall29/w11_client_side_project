@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import HomeContainer from './containers/HomeContainer';
+import NavBar from './components/NavBar';
 import './App.css';
+import {useState, useEffect} from "react";
+
+
 
 function App() {
+
+const [cars, setCars] = useState([]);
+
+useEffect(() => {
+  fetch("http://localhost:8081/cars")
+    .then(response => response.json())
+    .then(data => setCars(data))
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <HomeContainer cars={cars}/>
     </div>
   );
 }
