@@ -16,6 +16,10 @@ useEffect(() => {
     .then(data => setCars(data))
 }, [])
 
+const [customers, setCustomers] = useState([]);
+
+
+
   return (
     <>
     <div className="nav">
