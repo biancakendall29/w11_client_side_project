@@ -50,7 +50,8 @@ const postCustomer = (newCustomer) => {
 
         <Routes>
             <Route path="/" element={<HomeContainer cars={cars}/>} />
-            <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}/>} />
+            <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
+                  filterCustomers={filterCustomers}/>} />
 
         </Routes>
     </Router>

@@ -5,7 +5,7 @@ const CustomerContainer = ({postCustomer}) => {
     return (
         <>
         <h2>Customer Container !</h2>
-        <NewCustomerForm postCustomer={postCustomer}/>
+        <NewCustomerForm postCustomer={postCustomer, filterCustomers}/>
         </>
     )
 
