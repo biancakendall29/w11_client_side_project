@@ -1,11 +1,11 @@
 import NewCustomerForm from "../components/NewCustomerForm";
 
-const CustomerContainer = () => {
+const CustomerContainer = ({postCustomer}) => {
 
     return (
         <>
         <h2>Customer Container !</h2>
-        <NewCustomerForm />
+        <NewCustomerForm postCustomer={postCustomer}/>
         </>
     )
 

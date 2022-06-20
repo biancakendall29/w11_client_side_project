@@ -18,7 +18,23 @@ useEffect(() => {
 
 const [customers, setCustomers] = useState([]);
 
+useEffect(() => {
+  fetch("http://localhost:8081/customers")
+    .then(response => response.json())
+    .then(data => setCustomers(data))
+}, [])
 
+const postCustomer = (newCustomer) => {
+  fetch("http://localhost:8081/customers/new",
+      {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newCustomer)
+      }
+  )
+  .then(response => response.json())
+  .then(data => setCustomers([...customers, data]))
+}
 
   return (
     <>
@@ -34,7 +50,7 @@ const [customers, setCustomers] = useState([]);
 
         <Routes>
             <Route path="/" element={<HomeContainer cars={cars}/>} />
-            <Route path="/customerContainer" element={<CustomerContainer />} />
+            <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}/>} />
 
         </Routes>
     </Router>

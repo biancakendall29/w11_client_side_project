@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const NewCustomerForm = () => {
+const NewCustomerForm = ({postCustomer}) => {
 
     const [stateCustomer, setStateCustomer] = useState(
         {
@@ -16,7 +16,10 @@ const NewCustomerForm = () => {
         setStateCustomer(copiedStateCustomer);
     }
 
-    
+    const handleFormSignUpSubmit = (event) => {
+        event.preventDefault();
+        postCustomer(stateCustomer);
+    }
 
     return (
         <form onSubmit={handleFormSignUpSubmit}>
