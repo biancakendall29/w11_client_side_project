@@ -4,6 +4,7 @@ import DealerContainer from './containers/DealerContainer';
 import './App.css';
 import {useState, useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import PurchaseContainer from './containers/PurchaseContainer';
 
 function App() {
 
@@ -14,6 +15,8 @@ const [cars, setCars] = useState([]);
 const [customers, setCustomers] = useState([]);
 
 const [signedInCustomer, setSignedInCustomer] = useState([]);
+
+const [selectedCar, setSelectedCar] = useState([]);
 
 useEffect(() => {
   fetch("http://localhost:8081/cars")
@@ -58,6 +61,20 @@ const getCarsByFilter = (filter, searchInput) => {
   .then(data => setCars(data))
 }
 
+const handleSignOut = () => {
+  setSignedInCustomer([]);
+}
+
+// added car method 
+
+const addedCar = (car) => {
+  setSelectedCar(car);
+}
+
+const removeFromBasket = () => {
+  setSelectedCar([]);
+}
+
   return (
     <>
     <div className="nav">
@@ -67,14 +84,19 @@ const getCarsByFilter = (filter, searchInput) => {
             <li><Link to='/customerContainer'>Customer Sign up/Log in</Link></li>
             <li><Link to='/dealerContainer'>Dealer Sign up/Log in</Link></li>
             <li><Link to='/contact'>Contact Us</Link></li>
-            <li><Link to='/about'>About</Link></li>
+            <li><Link to='/basket'>Basket</Link></li>
+            <li><button onClick={handleSignOut}>Sign out</button></li>
+            
         </ul>
 
         <Routes>
-            <Route path="/" element={<HomeContainer cars={cars} signedInCustomer={signedInCustomer} getCarsByFilter={getCarsByFilter}/>} />
+            <Route path="/" element={<HomeContainer cars={cars} signedInCustomer={signedInCustomer} 
+            getCarsByFilter={getCarsByFilter} addedCar={addedCar}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
-                   filterCustomers={filterCustomers} />} />
+                   filterCustomers={filterCustomers} />} /> 
+            <Route path="/basket" element={<PurchaseContainer selectedCar={selectedCar} removeFromBasket={removeFromBasket} />} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
+
         </Routes>
     </Router>
     </div>

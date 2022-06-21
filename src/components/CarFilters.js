@@ -7,10 +7,10 @@ const CarFilters = ({cars, getCarsByFilter}) => {
     const inputValueRef = useRef();
 
     // Used for testing purposes:
-    useEffect(() => {
-        console.log(`cars: `, cars);
-        console.log(inputValueRef.current.value.toUpperCase());
-    }, [cars]);
+    // useEffect(() => {
+    //     console.log(`cars: `, cars);
+    //     console.log(inputValueRef.current.value.toUpperCase());
+    // }, [cars]);
 
 
     const handleSearchCars = () => {
