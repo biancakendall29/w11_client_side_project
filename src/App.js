@@ -85,15 +85,9 @@ const removeFromBasket = () => {
   setSelectedCars([]);
 }
 
-const makePurchase = (purchasingCustomer, purchasedCar) => {
-  console.log("Made a purchase");
-  let newPurchase = 
-  {
-    date: new Date().toLocaleString(),
-    customer: purchasingCustomer,
-    carPurchased: purchasedCar
-  }
-  console.log(newPurchase);
+const makePurchase = (newPurchase) => {
+  // console.log("Made a purchase");
+  // console.log(newPurchase);
   fetch("http://localhost:8081/purchases/new",
   {
     method: "POST",
@@ -102,7 +96,7 @@ const makePurchase = (purchasingCustomer, purchasedCar) => {
   }
 )
 .then(response => response.json())
-// .then(data => setCustomers([...customers, data]))
+.then(data => setPurchases([...purchases, data]))
 }
 
   return (
