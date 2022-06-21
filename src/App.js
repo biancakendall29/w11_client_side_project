@@ -1,5 +1,6 @@
 import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/CustomerContainer';
+import DealerContainer from './containers/DealerContainer';
 import './App.css';
 import {useState, useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
@@ -94,6 +95,7 @@ const removeFromBasket = () => {
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
                    filterCustomers={filterCustomers} />} /> 
             <Route path="/basket" element={<PurchaseContainer selectedCar={selectedCar} removeFromBasket={removeFromBasket} />} />
+            <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
 
         </Routes>
     </Router>
