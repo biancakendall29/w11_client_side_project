@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DealershipCarList from "./DealershipCarList";
 
 
 const DealershipFilter = ({dealerships, cars}) => {
@@ -35,6 +36,7 @@ const DealershipFilter = ({dealerships, cars}) => {
             <option>Select a Dealership</option>
             {dealershipOptions}
         </select>
+        <DealershipCarList stateCars={stateCars}/>
         </>
     );
 }
