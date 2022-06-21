@@ -1,5 +1,6 @@
 import HomeContainer from './containers/HomeContainer';
 import CustomerContainer from './containers/CustomerContainer';
+import DealerContainer from './containers/DealerContainer';
 import './App.css';
 import {useState, useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
@@ -73,6 +74,7 @@ const getCarsByFilter = (filter, searchInput) => {
             <Route path="/" element={<HomeContainer cars={cars} signedInCustomer={signedInCustomer} getCarsByFilter={getCarsByFilter}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
                    filterCustomers={filterCustomers} />} />
+            <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
         </Routes>
     </Router>
     </div>
