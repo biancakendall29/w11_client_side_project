@@ -16,7 +16,7 @@ const [customers, setCustomers] = useState([]);
 
 const [signedInCustomer, setSignedInCustomer] = useState([]);
 
-const [selectedCar, setSelectedCar] = useState([]);
+const [selectedCars, setSelectedCars] = useState([]);
 
 useEffect(() => {
   fetch("http://localhost:8081/cars")
@@ -68,11 +68,11 @@ const handleSignOut = () => {
 // added car method 
 
 const addedCar = (car) => {
-  setSelectedCar(car);
+  setSelectedCars([car]);
 }
 
 const removeFromBasket = () => {
-  setSelectedCar([]);
+  setSelectedCars([]);
 }
 
   return (
@@ -94,7 +94,7 @@ const removeFromBasket = () => {
             getCarsByFilter={getCarsByFilter} addedCar={addedCar}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
                    filterCustomers={filterCustomers} />} /> 
-            <Route path="/basket" element={<PurchaseContainer selectedCar={selectedCar} removeFromBasket={removeFromBasket} />} />
+            <Route path="/basket" element={<PurchaseContainer selectedCars={selectedCars} removeFromBasket={removeFromBasket} />} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
 
         </Routes>
