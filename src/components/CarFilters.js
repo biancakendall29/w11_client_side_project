@@ -20,7 +20,7 @@ const CarFilters = ({cars, getCarsByFilter}) => {
     }
     
     const handleResetFilters = () => {
-        filter = "";
+        setFilter(() => "");
         const searchInput = "";
         getCarsByFilter(filter, searchInput);
     }
