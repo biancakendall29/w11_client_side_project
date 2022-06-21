@@ -14,6 +14,11 @@ const [customers, setCustomers] = useState([]);
 
 const [signedInCustomer, setSignedInCustomer] = useState([]);
 
+let [filter, setFilter] = useState("");
+
+const inputValueRef = useRef();
+
+
 useEffect(() => {
   fetch("http://localhost:8081/cars")
     .then(response => response.json())
@@ -50,12 +55,6 @@ const filterCustomers = (signedInCustomerEmail) => {
   console.log(filteredCustomer);
 }
 
-// search bar and filter drop down
-
-const inputValueRef = useRef();
-
-let filter = "";
-
 // Used for testing purposes:
 useEffect(() => {
   console.log(`cars: `, cars);
@@ -82,7 +81,8 @@ const handleResetFilters = () => {
 }
 
 const handleFilter = (event) => {
-  filter = event.target.value;
+  console.log(event);
+  setFilter(() => event.target.value);
   console.log(filter);
 }
 
