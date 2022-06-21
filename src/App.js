@@ -18,6 +18,8 @@ const [signedInCustomer, setSignedInCustomer] = useState([]);
 
 const [selectedCars, setSelectedCars] = useState([]);
 
+const [purchases, setPurchases] = useState([]);
+
 useEffect(() => {
   fetch("http://localhost:8081/cars")
     .then(response => response.json())
@@ -30,6 +32,14 @@ useEffect(() => {
   fetch("http://localhost:8081/customers")
     .then(response => response.json())
     .then(data => setCustomers(data))
+}, [])
+
+// loading purchases from backend
+
+useEffect(() => {
+  fetch("http://localhost:8081/purchases")
+  .then(response => response.json())
+  .then(data => setPurchases(data))
 }, [])
 
 // adding a new customer to database
@@ -77,6 +87,22 @@ const removeFromBasket = () => {
 
 const makePurchase = (purchasingCustomer, purchasedCar) => {
   console.log("Made a purchase");
+  let newPurchase = 
+  {
+    date: new Date().toLocaleString(),
+    customer: purchasingCustomer,
+    carPurchased: purchasedCar
+  }
+  console.log(newPurchase);
+  fetch("http://localhost:8081/purchases/new",
+  {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(newPurchase)
+  }
+)
+.then(response => response.json())
+// .then(data => setCustomers([...customers, data]))
 }
 
   return (
