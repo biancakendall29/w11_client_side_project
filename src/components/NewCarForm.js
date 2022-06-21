@@ -13,7 +13,7 @@ const NewCarForm = ({dealerships, postCar}) => {
         }
     )
 
-    const [bodyType, setBodyType] = useState("");
+    const [newBodyType, setNewBodyType] = useState("");
 
     const dealershipOptions = dealerships.map((dealership) => {
         return (
@@ -31,16 +31,16 @@ const NewCarForm = ({dealerships, postCar}) => {
     
 
     const handleBodyType = (event) => {
-        const selectedBodyType = event.target.value;
-        setBodyType(selectedBodyType);
+        let selectedBodyType = event.target.value;
+        setNewBodyType(selectedBodyType);
         let copiedCar = {...newCar};
-        copiedCar.bodyType = bodyType;
+        copiedCar.bodyType = selectedBodyType;
         setNewCar(copiedCar);
     }
 
     useEffect(() => {
-        console.log(bodyType);
-    }, [bodyType])
+        console.log(newBodyType);
+    }, [newBodyType])
 
     const handleChange = (event) => {
         let propertyName = event.target.name;
@@ -50,8 +50,6 @@ const NewCarForm = ({dealerships, postCar}) => {
     }
 
     const handleFormSubmit = (event) => {
-
-        
         console.log(newCar);
         event.preventDefault();
         postCar(newCar);
@@ -69,8 +67,8 @@ const NewCarForm = ({dealerships, postCar}) => {
             value={newCar.brand}
         ></input>
         <label>BodyType:</label>
-            <select value={bodyType} onChange={handleBodyType}>
-                <option value={"SUV"}>SUV</option>
+            <select value={newBodyType} onChange={handleBodyType}>
+                <option value="SUV">SUV</option>
                 <option value="COUPE">Coupe</option>
                 <option value="SALOON">Saloon</option>
                 <option value="CONVERTIBLE">Convertible</option>
