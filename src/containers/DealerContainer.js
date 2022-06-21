@@ -1,6 +1,6 @@
 import DealershipFilter from "../components/DealershipFilter";
 import { useEffect, useState } from "react";
-
+import NewCarForm from "../components/NewCarForm";
 const DealerContainer = ({cars}) => {
 
     // State for dealerships located here for "dealer admin" methods:
@@ -16,6 +16,7 @@ const DealerContainer = ({cars}) => {
 
     return (
         <>
+        <NewCarForm dealerships={dealerships}/>
         <DealershipFilter dealerships={dealerships} cars={cars} />
         </>
     );
