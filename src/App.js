@@ -16,7 +16,9 @@ const [customers, setCustomers] = useState([]);
 
 const [signedInCustomer, setSignedInCustomer] = useState([]);
 
-const [selectedCar, setSelectedCar] = useState([]);
+const [selectedCars, setSelectedCars] = useState([]);
+
+const [purchases, setPurchases] = useState([]);
 
 useEffect(() => {
   fetch("http://localhost:8081/cars")
@@ -30,6 +32,14 @@ useEffect(() => {
   fetch("http://localhost:8081/customers")
     .then(response => response.json())
     .then(data => setCustomers(data))
+}, [])
+
+// loading purchases from backend
+
+useEffect(() => {
+  fetch("http://localhost:8081/purchases")
+  .then(response => response.json())
+  .then(data => setPurchases(data))
 }, [])
 
 // adding a new customer to database
@@ -68,11 +78,25 @@ const handleSignOut = () => {
 // added car method 
 
 const addedCar = (car) => {
-  setSelectedCar(car);
+  setSelectedCars([car]);
 }
 
 const removeFromBasket = () => {
-  setSelectedCar([]);
+  setSelectedCars([]);
+}
+
+const makePurchase = (newPurchase) => {
+  // console.log("Made a purchase");
+  // console.log(newPurchase);
+  fetch("http://localhost:8081/purchases/new",
+  {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(newPurchase)
+  }
+)
+.then(response => response.json())
+.then(data => setPurchases([...purchases, data]))
 }
 
   return (
@@ -94,7 +118,10 @@ const removeFromBasket = () => {
             getCarsByFilter={getCarsByFilter} addedCar={addedCar}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
                    filterCustomers={filterCustomers} />} /> 
-            <Route path="/basket" element={<PurchaseContainer selectedCar={selectedCar} removeFromBasket={removeFromBasket} />} />
+            <Route path="/basket" element={<PurchaseContainer selectedCars={selectedCars} 
+                   removeFromBasket={removeFromBasket} 
+                   signedInCustomer={signedInCustomer}
+                   makePurchase={makePurchase}/>} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
 
         </Routes>

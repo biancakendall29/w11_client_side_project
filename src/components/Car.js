@@ -5,8 +5,8 @@ const Car = ({car, addedCar}) => {
     }
     return (
         <div>
-           <h4>{car.brand}</h4>
-           <p>Body Type: {car.bodyType}</p>
+            <h4>{car.brand}</h4>
+            <p>Body Type: {car.bodyType}</p>
             <p>Colour: {car.colour}</p>
             <p>Car Year: {car.carYear}</p>
             <p>Price: {car.price}</p>

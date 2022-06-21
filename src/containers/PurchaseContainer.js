@@ -1,40 +1,53 @@
-const PurchaseContainer = ({selectedCar, removeFromBasket}) => {
-    let basketCar = "";
-    if (selectedCar) { 
-        basketCar = selectedCar;
+import BasketCar from "../components/BasketCar";
+
+const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, makePurchase}) => {
+
+    const basketCarComponents = selectedCars.map(selectedCar => {
+        return <BasketCar
+                    key={selectedCar.id}
+                    selectedCar={selectedCar}
+                    removeFromBasket={removeFromBasket} />
+
+    })
+
+    let userName = "";
+    if (signedInCustomer[0]) { 
+        userName = "Welcome " + signedInCustomer[0].name;
     }
     else {
-        basketCar = {
-            bodyType: "",
-            brand: "",
-            colour: "",
-            carYear: "",
-            price: 0,
-            dealership: {
-                name: "",
-                location:""
-            }
+        userName = "Please sign up or sign in to make a purchase";
+    }
+
+    const handleMakePurchase = () => {
+        if (signedInCustomer[0] && selectedCars[0]) {
+            // let formattedCar = 
+            // {
+            //     bodytype: selectedCars[0].bodytype,
+            //     brand: selectedCars[0].brand,
+            //     colour: selectedCars[0].colour,
+            //     carYear: selectedCars[0].carYear,
+            //     price: selectedCars[0].price
+            // }
             
-
-
-        };
+            let newPurchase = 
+            {
+              date: new Date().toISOString().split('T')[0],
+              customer: signedInCustomer[0],
+              carPurchased: selectedCars[0]
+            }
+            makePurchase(newPurchase);
+        }
+        else {
+            alert("Your basket is empty or you're not signed in")
+        }
     }
     
-    const handleRemoveButton = () => {
-        removeFromBasket()
-    }
     return (
         <>
         <h2>Basket</h2>
-            <h4>Brand: {selectedCar.brand}</h4>
-            <p>Body Type: {selectedCar.bodyType}</p>
-            <p>Colour: {selectedCar.colour}</p>
-            <p>Car Year: {selectedCar.carYear}</p>
-            <p>Price: {selectedCar.price}</p>
-            <p>Dealership: {selectedCar.dealership.name} {selectedCar.dealership.location}</p>
-            <button onClick={handleRemoveButton}>Remove</button>
-
-        
+        <h3>{userName}</h3>
+        {basketCarComponents}
+        <button onClick={handleMakePurchase}>Make purchase</button>
         </>
     );
 }
