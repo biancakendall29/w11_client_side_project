@@ -4,19 +4,13 @@ const PurchaseContainer = ({selectedCar, removeFromBasket}) => {
         basketCar = selectedCar;
     }
     else {
-        basketCar = {
+        basketCar = 
+        {
             bodyType: "",
             brand: "",
             colour: "",
             carYear: "",
             price: 0,
-            dealership: {
-                name: "",
-                location:""
-            }
-            
-
-
         };
     }
     
@@ -26,12 +20,13 @@ const PurchaseContainer = ({selectedCar, removeFromBasket}) => {
     return (
         <>
         <h2>Basket</h2>
-            <h4>Brand: {selectedCar.brand}</h4>
-            <p>Body Type: {selectedCar.bodyType}</p>
-            <p>Colour: {selectedCar.colour}</p>
-            <p>Car Year: {selectedCar.carYear}</p>
-            <p>Price: {selectedCar.price}</p>
-            <p>Dealership: {selectedCar.dealership.name} {selectedCar.dealership.location}</p>
+            <h4>Brand: {basketCar.brand}</h4>
+            <p>Body Type: {basketCar.bodyType}</p>
+            <p>Colour: {basketCar.colour}</p>
+            <p>Car Year: {basketCar.carYear}</p>
+            <p>Price: {basketCar.price}</p>
+            {/* {if (selectedCar)} */}
+            <p>Dealership: {basketCar.dealership.name} {basketCar.dealership.location}</p>
             <button onClick={handleRemoveButton}>Remove</button>
 
         
