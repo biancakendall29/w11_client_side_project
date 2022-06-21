@@ -99,6 +99,19 @@ const makePurchase = (newPurchase) => {
 .then(data => setPurchases([...purchases, data]))
 }
 
+const postCar = (newCar) => {
+  // add the new car to db/server.
+  fetch("http://localhost:8081/cars/new", 
+  {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newCar)
+  })
+  // update things locally
+  .then(response => response.json())
+  .then(savedCar => setCars([...cars, savedCar]))
+}
+
   return (
     <>
     <div className="nav">
@@ -122,7 +135,7 @@ const makePurchase = (newPurchase) => {
                    removeFromBasket={removeFromBasket} 
                    signedInCustomer={signedInCustomer}
                    makePurchase={makePurchase}/>} />
-            <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
+            <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar}/>} />
 
         </Routes>
     </Router>
