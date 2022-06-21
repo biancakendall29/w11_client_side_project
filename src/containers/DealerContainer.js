@@ -16,7 +16,6 @@ const DealerContainer = ({cars}) => {
 
     return (
         <>
-        <h1>Hello from DealerContainer</h1>
         <DealershipFilter dealerships={dealerships} cars={cars} />
         </>
     );

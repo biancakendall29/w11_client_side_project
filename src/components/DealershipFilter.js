@@ -31,7 +31,7 @@ const DealershipFilter = ({dealerships, cars}) => {
 
     return (
         <>
-        <h1>Hello from DealershipFilter</h1>
+        <h2>Please Select a Dealership:</h2>
         <select onChange={handleChange}>
             <option>Select a Dealership</option>
             {dealershipOptions}

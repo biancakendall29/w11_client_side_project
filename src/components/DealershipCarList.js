@@ -1,8 +1,8 @@
-import Car from "./Car"
+import DealerCar from "./DealerCar"
 
 const DealershipCarList = ({stateCars}) => {
     const carComponents = stateCars.map(car => {
-        return <Car
+        return <DealerCar
                     key={car.id}
                     car={car}
                      />
