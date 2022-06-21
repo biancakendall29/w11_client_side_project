@@ -94,7 +94,9 @@ const removeFromBasket = () => {
             getCarsByFilter={getCarsByFilter} addedCar={addedCar}/>} />
             <Route path="/customerContainer" element={<CustomerContainer postCustomer={postCustomer}
                    filterCustomers={filterCustomers} />} /> 
-            <Route path="/basket" element={<PurchaseContainer selectedCars={selectedCars} removeFromBasket={removeFromBasket} />} />
+            <Route path="/basket" element={<PurchaseContainer selectedCars={selectedCars} 
+                   removeFromBasket={removeFromBasket} 
+                   signedInCustomer={signedInCustomer}/>} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
 
         </Routes>
