@@ -1,10 +1,11 @@
 import Car from "./Car"
 
-const CarList = ({cars}) => {
+const CarList = ({cars, addedCar}) => {
     const carComponents = cars.map(car => {
         return <Car
                     key={car.id}
-                    car={car} />
+                    car={car}
+                    addedCar={addedCar} />
 
     })
 

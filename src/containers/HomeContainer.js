@@ -2,7 +2,7 @@ import CarGallery from "../components/CarGallery";
 import CarFilters from "../components/CarFilters";
 import CarList from "../components/CarList";
 
-const HomeContainer = ({cars, signedInCustomer, getCarsByFilter}) => {
+const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
 
     let userName = "";
     if (signedInCustomer[0]) { 
@@ -20,7 +20,8 @@ const HomeContainer = ({cars, signedInCustomer, getCarsByFilter}) => {
         <h2>{`Hello ${userName}`}</h2>
         <CarGallery />
         <CarFilters cars={cars} getCarsByFilter={getCarsByFilter}/>
-        <CarList cars={cars}/>
+        <CarList cars={cars} addedCar={addedCar}/>
+        
         </>
     );
 }
