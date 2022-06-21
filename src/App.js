@@ -10,6 +10,10 @@ function App() {
 
 const [cars, setCars] = useState([]);
 
+const [customers, setCustomers] = useState([]);
+
+const [signedInCustomer, setSignedInCustomer] = useState([]);
+
 useEffect(() => {
   fetch("http://localhost:8081/cars")
     .then(response => response.json())
@@ -17,8 +21,6 @@ useEffect(() => {
 }, [])
 
 // loading customers from backend
-
-const [customers, setCustomers] = useState([]);
 
 useEffect(() => {
   fetch("http://localhost:8081/customers")
@@ -40,15 +42,12 @@ const postCustomer = (newCustomer) => {
   .then(data => setCustomers([...customers, data]))
 }
 
-const [signedInCustomer, setSignedInCustomer] = useState([]);
-
 const filterCustomers = (signedInCustomerEmail) => {
   let filteredCustomer = {...signedInCustomer}
   // console.log(signedInCustomer);
   filteredCustomer = customers.filter(customer => customer.emailAddress === signedInCustomerEmail);
-  setSignedInCustomer(filteredCustomer);
+  setSignedInCustomer(() => filteredCustomer);
   console.log(filteredCustomer);
-  console.log(signedInCustomer);
 }
 
 // search bar and filter drop down
