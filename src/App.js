@@ -75,6 +75,10 @@ const removeFromBasket = () => {
   setSelectedCars([]);
 }
 
+const makePurchase = (purchasingCustomer, purchasedCar) => {
+  console.log("Made a purchase");
+}
+
   return (
     <>
     <div className="nav">
@@ -96,7 +100,8 @@ const removeFromBasket = () => {
                    filterCustomers={filterCustomers} />} /> 
             <Route path="/basket" element={<PurchaseContainer selectedCars={selectedCars} 
                    removeFromBasket={removeFromBasket} 
-                   signedInCustomer={signedInCustomer}/>} />
+                   signedInCustomer={signedInCustomer}
+                   makePurchase={makePurchase}/>} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars}/>} />
 
         </Routes>

@@ -1,6 +1,6 @@
 import BasketCar from "../components/BasketCar";
 
-const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer}) => {
+const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, makePurchase}) => {
 
     const basketCarComponents = selectedCars.map(selectedCar => {
         return <BasketCar
@@ -19,7 +19,12 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer}) =
     }
 
     const handleMakePurchase = () => {
-        
+        if (signedInCustomer[0] && selectedCars[0]) {
+            makePurchase(signedInCustomer[0], selectedCars[0]);
+        }
+        else {
+            alert("Your basket is empty or you're not signed in")
+        }
     }
     
     return (
