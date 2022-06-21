@@ -37,11 +37,15 @@ const NewCarForm = ({dealerships}) => {
         name="brand" 
     ></input>
     <label>BodyType:</label>
-    <input 
-        type="text" 
-        placeholder="BodyType" 
-        name="bodyType" 
-    ></input>
+    {/* <select value={bodyType} onChange={handleBodyType}> */}
+    <select value="" >
+            <option value="SUV">SUV</option>
+            <option value="COUPE">Coupe</option>
+            <option value="SALOON">Saloon</option>
+            <option value="CONVERTIBLE">Convertible</option>
+            <option value="HATCHBACK">Hatchback</option>
+            <option value="ESTATE">Estate</option>
+        </select>
     <label>Colour:</label>
     <input 
         type="text" 
@@ -67,17 +71,5 @@ const NewCarForm = ({dealerships}) => {
         </select>
     </form>
     )
-        
-
-
-
-
-
-
-
-
 }
-
-
-
 export default NewCarForm;
