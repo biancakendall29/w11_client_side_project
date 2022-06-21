@@ -16,6 +16,7 @@ const DealerContainer = ({cars}) => {
 
     return (
         <>
+        <NewDealerForm dealerships={dealerships} />
         <NewCarForm dealerships={dealerships}/>
         <DealershipFilter dealerships={dealerships} cars={cars} />
         </>
