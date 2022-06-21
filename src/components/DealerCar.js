@@ -7,7 +7,7 @@ const DealerCar = ({car}) => {
             <p>Colour: {car.colour}</p>
             <p>Car Year: {car.carYear}</p>
             <p>Price: {car.price}</p>
-            <p>Dealership: {car.dealership.name} {car.dealership.location}</p>
+            <p>Dealership: {car.dealership.name}, {car.dealership.location}</p>
             <button>Remove Car from Listings</button>
 
         </div>
