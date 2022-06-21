@@ -1,6 +1,7 @@
+import {useState} from "react";
 
 
-const NewDealerForm = () => {
+const NewDealerForm = ({dealerships}) => {
 
     // set initial state for a new dealer
 
@@ -29,11 +30,18 @@ const NewDealerForm = () => {
     // triggers function to post new customer to customer database. postCustomer defined in App.js.
     const handleFormSignUpSubmit = (event) => {
         event.preventDefault();
-        postDealer(stateDealer);
+        //postDealer(stateDealer);
+    }
+    const selectNewCarDealership = (event) => {
+        const dealershipId = parseInt(event.target.value);
+        const selectedDealership = dealerships.find(dealership => dealership.id === dealershipId);
+        let copiedDealer = {...stateDealer};
+        copiedDealer.dealership = selectedDealership;
+        setStateDealer(copiedDealer);
     }
     return (
 
-        <form>
+        <form onSubmit={handleFormSignUpSubmit}>
             <h2>Sign up as a Dealer</h2>
             <input
                 type="text"
@@ -53,3 +61,5 @@ const NewDealerForm = () => {
     )
 
 }
+
+export default NewDealerForm;
