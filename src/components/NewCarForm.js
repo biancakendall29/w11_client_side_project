@@ -68,6 +68,7 @@ const NewCarForm = ({dealerships, postCar}) => {
         ></input>
         <label>BodyType:</label>
             <select value={newBodyType} onChange={handleBodyType}>
+                <option>Select a bodytype</option>
                 <option value="SUV">SUV</option>
                 <option value="COUPE">Coupe</option>
                 <option value="SALOON">Saloon</option>
