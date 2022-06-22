@@ -1,7 +1,7 @@
 #containersAll {
   margin: 2%;
   background-color: #271f30;
-  
+
 }
 
 
@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   list-style: none; 
   background-color:#177e89 ;
   text-decoration: none;
