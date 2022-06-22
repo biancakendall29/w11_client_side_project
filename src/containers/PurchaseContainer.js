@@ -13,7 +13,7 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
 
     let userName = "";
     if (signedInCustomer[0]) { 
-        userName = "Welcome " + signedInCustomer[0].name;
+        userName = "Here's your basket " + signedInCustomer[0].name;
     }
     else {
         userName = "Please sign up or sign in to make a purchase";
@@ -45,11 +45,11 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
     
     return (
         <>
-        <div id="purchasecart">
+        <div id="purchase-basket">
         <h2>Basket</h2>
         <h3>{userName}</h3>
         {basketCarComponents}
-        <button onClick={handleMakePurchase}>Make purchase</button>
+        <button id="purchase-button" onClick={handleMakePurchase}>Make purchase</button>
         </div>
         </>
     );

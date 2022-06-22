@@ -5,7 +5,7 @@ const BasketCar = ({selectedCar, removeFromBasket}) => {
     }
 
     return (
-        <div>
+        <div id="basket-car">
            <h4>{selectedCar.brand}</h4>
            <p>Body Type: {selectedCar.bodyType}</p>
             <p>Colour: {selectedCar.colour}</p>
