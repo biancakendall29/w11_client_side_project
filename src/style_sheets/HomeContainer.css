@@ -12,11 +12,66 @@ Mountbatten Pink: #9A7AA0
   color: #EBEBEB;
 }
 
-#car-filter-text-box {
-  margin: 1%;
+/* CAR FILTER SEARCH BAR: */
+#car-filter-search-bar {
+  background-color: #EBEBEB;
+  text-align: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 5rem;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #271F30;
+  border-width: 0.5rem;
 }
 
+#car-filter-text-box {
+  margin: 3%;
+}
 
+#car-filter-search-bar > input {
+  font-size: 2.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  color: #177E89;
+  border-style: solid;
+  border-color: #271F30;
+}
+
+#car-filter-search-bar > button {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 0.8rem;
+  border-radius: 50px;
+  background-color: #271F30;
+  color: #EBEBEB;
+}
+
+#car-filter-search-bar > button:focus {
+  background-color: #177E89;
+  color: #EBEBEB;
+}
+
+#car-filter-search-bar > select {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  color: #177E89;
+  padding: 0.3rem;
+  border-style: solid;
+  border-color: #271F30;
+  border-width: 0.3rem;
+  border-radius: 50px;
+}
+
+/* LIST OF CAR ITEMS */
 #car-item-container {
   display: flex;
   flex-direction: row;
