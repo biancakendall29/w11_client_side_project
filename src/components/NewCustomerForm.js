@@ -72,7 +72,7 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
             <h2>Sign in with your email address</h2>
             <label>Email address:</label>
             <input type="text" placeholder="Email" onChange={handleSignInChange} value={stateCustomerEmail}></input>
-            <button type="submit">SIGN IN</button>
+            <button id="sign-in-button" type="submit">SIGN IN</button>
         </form>
         </>
 
