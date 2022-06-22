@@ -26,10 +26,9 @@ const CarFilters = ({ getCarsByFilter}) => {
 
     return (
         <>
-        <h2>Hello from CarFilters</h2>
-        <div id="carFilter">
-          <input ref={inputValueRef} type="text"></input><button onClick={handleSearchCars}>Search</button>
-          <button onClick={handleResetFilters}>Reset Filters</button>
+        <h2>Browse Our Cars:</h2>
+        <div>
+          <input id="car-filter-text-box" ref={inputValueRef} type="text"></input>
           <select value={filter} onChange={handleFilter}>
             <option value="">No Filter</option>
             <option value="?brand=">Brand</option>
@@ -38,6 +37,8 @@ const CarFilters = ({ getCarsByFilter}) => {
             <option value="?year=">Minimum Year</option>
             <option value="?price=">Maximum Price</option>
         </select>
+        <button onClick={handleSearchCars}>Search</button>
+        <button onClick={handleResetFilters}>Reset Filters</button>
         </div>
         </>
     );
