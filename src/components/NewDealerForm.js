@@ -69,8 +69,10 @@ const NewDealerForm = ({postDealer, dealerships, filterDealers, signedInDealer})
 
     return (
         <>
-        <form onSubmit={handleFormSignUpSubmit}>
+        <form id="dealer-sign-up-form" onSubmit={handleFormSignUpSubmit}>
             <h2>Sign up as a Dealer</h2>
+            <ul>
+            <li> <label>Name: </label>
             <input
                 type="text"
                 placeholder="Name"
@@ -79,14 +81,19 @@ const NewDealerForm = ({postDealer, dealerships, filterDealers, signedInDealer})
                 value={stateDealer.name}>
 
             </input>
-
+            </li>
+            <li>
             <select onChange={selectNewCarDealership}>
                 <option>Select a Dealership</option>
                 {dealershipOptions}
             </select>
+            </li>
+            <li>
             <button type="submit">SIGN UP</button>
+            </li>
+            </ul>
         </form>
-        <form onSubmit={handleFormSignInSubmit}>
+        <form id="dealer-sign-in-form" onSubmit={handleFormSignInSubmit}>
         <h2>Sign in with your unique dealer ID</h2>
             <label>ID:</label>
             <input type="text" placeholder="ID" onChange={handleSignInChange} value={stateDealer.id}></input>

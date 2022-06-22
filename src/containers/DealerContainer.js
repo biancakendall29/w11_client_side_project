@@ -55,7 +55,7 @@ const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => 
 
     return (
         <>
-
+            <h2 id="dealer-container-heading">Welcome Dealer !</h2>
             <NewDealerForm dealerships={dealerships}
                 postDealer={postDealer}
                 filterDealers={filterDealers}
