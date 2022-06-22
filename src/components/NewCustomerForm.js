@@ -41,15 +41,15 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
         filterCustomers(stateCustomerEmail);
     }
 
-    const changeSignUpMessage = () => {
-        alert("You've signed up as " + stateCustomer.name)
-        return true;
-    }
+    // const changeSignUpMessage = () => {
+    //     alert("You've signed up as " + stateCustomer.name)
+    //     return true;
+    // }
 
-    const changeSignInMessage = () => {
-        alert("You've signed in as " + stateCustomer.name)
-        return true;
-    }
+    // const changeSignInMessage = () => {
+    //     alert("You've signed in as " + stateCustomerEmail)
+    //     return true;
+    // }
 
     return (
         <>
@@ -60,14 +60,14 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
             <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateCustomer.name}></input>
             <label>Email address:</label>
             <input type="text" placeholder="Email" name="emailAddress" onChange={handleChange} value={stateCustomer.emailAddress}></input>
-            <button type="submit" onClick={changeSignUpMessage}>SIGN UP</button>
+            <button type="submit">SIGN UP</button>
         </form>
         {/* sign in form to saved customers details to temp variable to keep track of signed in customer */}
         <form onSubmit={handleFormSignInSubmit}>
             <h2>Sign in with your email address</h2>
             <label>Email address:</label>
             <input type="text" placeholder="Email" onChange={handleSignInChange} value={stateCustomerEmail}></input>
-            <button type="submit" onClick={changeSignInMessage}>SIGN IN</button>
+            <button type="submit">SIGN IN</button>
         </form>
         </>
 
