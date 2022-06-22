@@ -17,8 +17,8 @@ Mountbatten Pink: #9A7AA0
   background-color: #EBEBEB;
   text-align: center;
   margin-top: 2rem;
-  margin-left: 0%;
-  margin-right: 0%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 2rem;
   border-radius: 100px;
   border-style: solid;
@@ -27,11 +27,14 @@ Mountbatten Pink: #9A7AA0
 }
 
 #car-filter-text-box {
-  margin: 3%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #car-filter-search-bar > input {
-  width: 40%;
+  width: 35%;
   font-size: 2.5rem;
   font-weight: 600;
   padding: 0.5rem;
@@ -45,8 +48,6 @@ Mountbatten Pink: #9A7AA0
   font-weight: 600;
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
   padding: 0.8rem;
   border-radius: 50px;
   background-color: #271F30;
@@ -63,8 +64,6 @@ Mountbatten Pink: #9A7AA0
   font-weight: 700;
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
   color: #177E89;
   padding: 0.3rem;
   border-style: solid;
