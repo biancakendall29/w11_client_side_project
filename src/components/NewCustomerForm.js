@@ -54,16 +54,21 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
     return (
         <>
         {/* sign up form to create new customer  */}
-        <form onSubmit={handleFormSignUpSubmit}>
-            <h2>Sign up as a customer !</h2>
-            <label>Customer name:</label>
-            <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateCustomer.name}></input>
-            <label>Email address:</label>
-            <input type="text" placeholder="Email" name="emailAddress" onChange={handleChange} value={stateCustomer.emailAddress}></input>
-            <button type="submit">SIGN UP</button>
+        <form id="customer-sign-up-form" onSubmit={handleFormSignUpSubmit}>
+            <h2 id="customer-sign-up-heading">Sign up as a customer !</h2>
+            <ul>
+                <li> <label>Customer name:</label>
+                     <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateCustomer.name}></input>
+                </li>    
+                <li> 
+                     <label>Email address:</label>
+                     <input type="text" placeholder="Email" name="emailAddress" onChange={handleChange} value={stateCustomer.emailAddress}></input>
+                </li>     
+                <li> <button type="submit">SIGN UP</button> </li> 
+            </ul>
         </form>
         {/* sign in form to saved customers details to temp variable to keep track of signed in customer */}
-        <form onSubmit={handleFormSignInSubmit}>
+        <form id="customer-sign-in-form" onSubmit={handleFormSignInSubmit}>
             <h2>Sign in with your email address</h2>
             <label>Email address:</label>
             <input type="text" placeholder="Email" onChange={handleSignInChange} value={stateCustomerEmail}></input>
