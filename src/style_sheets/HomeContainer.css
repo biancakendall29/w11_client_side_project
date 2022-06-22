@@ -16,12 +16,13 @@ Mountbatten Pink: #9A7AA0
 #car-filter-search-bar {
   background-color: #EBEBEB;
   text-align: center;
+  margin-top: 2rem;
   margin-left: 0%;
   margin-right: 0%;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   border-radius: 100px;
   border-style: solid;
-  border-color: #271F30;
+  border-color: #177E89;
   border-width: 0.5rem;
 }
 
@@ -30,6 +31,7 @@ Mountbatten Pink: #9A7AA0
 }
 
 #car-filter-search-bar > input {
+  width: 40%;
   font-size: 2.5rem;
   font-weight: 600;
   padding: 0.5rem;
@@ -84,25 +86,53 @@ Mountbatten Pink: #9A7AA0
 }
 
 .car-items {
-  background-color: #271F30;
-  color: #EBEBEB;
-  border: 10px solid #177E89;
-  border-radius: 0%;
-  box-shadow: 7px 7px 7px 7px #EBEBEB;
+  background-color: #EBEBEB;
+  color: #271F30;
+  font-weight: 600;
+  border: 10px solid #271F30;
+  border-radius: 40%;
+  outline-color: #EBEBEB;
+  outline-style: dotted;
+  outline-width: 4px;
+  box-shadow: 0px 0px 20px 20px #177E89;
   margin: 3em;
   padding: 1em;
-  height: 18em;
-  width: 20em;
+  height: 20em;
+  width: 22em;
   text-align: center;
 }
 
+.car-items > button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  padding: 0.6rem;
+  border-color: #177E89;
+  border-width: 3px;
+  border-radius: 50px;
+  background-color: #177E89;
+  color: #271F30;
+}
+
+.car-items > button:focus {
+  background-color: #177E89;
+  color: #EBEBEB;
+}
+
+
 .car-brand-header {
-  font-size: 25px;
-  margin: 0.5em;
+  color: #177E89;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0.2em;
 
 }
 #add-to-basket {
-  background-color: #CAD2C5;
+  background-color: #271F30;
+  color: #EBEBEB;
 }
 
 

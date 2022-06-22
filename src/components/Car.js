@@ -12,7 +12,6 @@ const Car = ({car, addedCar}) => {
             <p>Price: {car.price}</p>
             <p>Dealership: {car.dealership.name}, {car.dealership.location}</p>
             <button id="add-to-basket" onClick={handleAddToBasket}>Add to Basket</button>
-
         </div>
     );
 }
