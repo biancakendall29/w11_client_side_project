@@ -1,4 +1,8 @@
-const DealerCar = ({car}) => {
+const DealerCar = ({car, deleteCar}) => {
+
+    const handleRemoveCar = () => {
+        deleteCar(car.id);
+    }
 
     return (
         <div>
@@ -8,7 +12,7 @@ const DealerCar = ({car}) => {
             <p>Car Year: {car.carYear}</p>
             <p>Price: {car.price}</p>
             <p>Dealership: {car.dealership.name}, {car.dealership.location}</p>
-            <button>Remove Car from Listings</button>
+            <button onClick={handleRemoveCar}>Remove Car from Listings</button>
 
         </div>
     );

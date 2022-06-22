@@ -20,6 +20,8 @@ const [selectedCars, setSelectedCars] = useState([]);
 
 const [purchases, setPurchases] = useState([]);
 
+const [stateCars, setStateCars] = useState([]);
+
 useEffect(() => {
   fetch("http://localhost:8081/cars")
     .then(response => response.json())
@@ -112,6 +114,21 @@ const postCar = (newCar) => {
   .then(savedCar => setCars([...cars, savedCar]))
 }
 
+const displayCars = (checkedCars) => {
+  setStateCars(checkedCars);
+}
+
+const deleteCar = (id) => {
+  fetch("http://localhost:8081/cars/remove/" + id, {
+    method: "DELETE",
+    headers: {"Content-Type": "application/json"}
+  })
+  setCars(cars.filter(car => car.id !== id))
+  setStateCars(stateCars.filter(car => car.id !== id))
+
+}
+
+
   return (
     <>
     <div className="nav">
@@ -135,7 +152,7 @@ const postCar = (newCar) => {
                    removeFromBasket={removeFromBasket} 
                    signedInCustomer={signedInCustomer}
                    makePurchase={makePurchase}/>} />
-            <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar}/>} />
+            <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>} />
 
         </Routes>
     </Router>
