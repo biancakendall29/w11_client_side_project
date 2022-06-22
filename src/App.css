@@ -1,5 +1,6 @@
 #containersAll {
   margin: 2%;
+  margin-top: 10%;
   background-color: #271f30;
 
 }
@@ -9,9 +10,9 @@
   /* margin: 0%, 2%, 0%, 2%;
   background-color: green;
   background-size: cover; */
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
