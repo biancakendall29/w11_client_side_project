@@ -1,6 +1,7 @@
 import CarGallery from "../components/CarGallery";
 import CarFilters from "../components/CarFilters";
 import CarList from "../components/CarList";
+import { CarImages } from "../components/CarImages";
 
 const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
 
@@ -18,7 +19,7 @@ const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
         <>
         <h1>Hello from HomeContainer</h1>
         <h2>{`Hello ${userName}`}</h2>
-        <CarGallery />
+        <CarGallery slides={CarImages}/>
         <CarFilters cars={cars} getCarsByFilter={getCarsByFilter}/>
         <CarList cars={cars} addedCar={addedCar}/>
         
