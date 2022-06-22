@@ -13,7 +13,7 @@ form#customer-sign-up-form {
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 5rem;
-    border-radius: 5%;
+    border-radius: 50px;
     border-style: solid;
     border-color: #271F30;
     border-width: 0.5rem;
@@ -55,7 +55,7 @@ form#customer-sign-up-form > ul > li > button {
     margin-top: 1rem;
     margin-bottom: 3rem;
     padding: 0.8rem;
-    border-radius: 15%;
+    border-radius: 50px;
     background-color: #271F30;
     color: #EBEBEB;
 }
@@ -73,7 +73,7 @@ form#customer-sign-in-form {
     margin-left: 15%;
     margin-right: 15%;
     margin-bottom: 5rem;
-    border-radius: 8%;
+    border-radius: 50px;
     border-style: solid;
     border-color: #271F30;
     border-width: 0.5rem;
@@ -108,7 +108,7 @@ form#customer-sign-in-form > button {
     margin-bottom: 3rem;
     margin-left: 3rem;
     padding: 0.8rem;
-    border-radius: 15%;
+    border-radius: 50px;
     background-color: #271F30;
     color: #EBEBEB;
 }

@@ -19,11 +19,13 @@ const DealershipFilter = ({dealerships, cars, deleteCar, displayCars, stateCars}
 
     return (
         <>
+        <div id="dealership-filter">
         <h2>Please Select a Dealership:</h2>
         <select onChange={handleChange}>
             <option>Select a Dealership</option>
             {dealershipOptions}
         </select>
+        </div>
         <DealershipCarList stateCars={stateCars} deleteCar={deleteCar}/>
         </>
     );
