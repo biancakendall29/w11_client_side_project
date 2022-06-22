@@ -11,9 +11,10 @@ const CarList = ({cars, addedCar}) => {
 
     return (
         <>
-        <h3> List of Cars </h3>
         <hr />
+        <div id="car-item-container">
         {carComponents}
+        </div>
         </>
     )
 }

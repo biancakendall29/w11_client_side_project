@@ -45,10 +45,12 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
     
     return (
         <>
+        <div id="purchasecart">
         <h2>Basket</h2>
         <h3>{userName}</h3>
         {basketCarComponents}
         <button onClick={handleMakePurchase}>Make purchase</button>
+        </div>
         </>
     );
 }
