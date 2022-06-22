@@ -133,7 +133,7 @@ const deleteCar = (id) => {
     <div className="webpage">
     <Router>
         <div id="navBar">
-        <ul>
+        <ul id='navbarlink'>
             <li><Link to='/'>Home</Link></li>  
             <li><Link to='/customerContainer'>Customer Sign up/Log in</Link></li>
             <li><Link to='/dealerContainer'>Dealer Sign up/Log in</Link></li>

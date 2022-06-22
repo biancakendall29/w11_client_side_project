@@ -15,38 +15,38 @@
   /* align-items: center; */
   list-style: none; 
   background-color:#177e89 ;
-  text-decoration: none;
 }
 
-.li, button{
+#navbarlink > li{
   font-weight: 500;
   font-size: 16px;
   color:#ebebeb;
   list-style: none;
   flex-wrap: wrap;
-  text-decoration: none;
-
 }
 
-li{
+#navbarlink > li :link {
+  text-decoration: none;}
+
+
+#navbarlink > li{
   display: inline-block;
   padding:0px 20px;
 
 }
 
-li :hover{
-  color: #271f30;
-}
 
 Button#signOutButton {
   padding:5px 15px;
-  background-color: #271f30;
   border:none;
   border-radius: 50px;
   cursor:pointer;
   transition: all 0.3s ease 0s;
 }
 
+#navbarlink > li :hover{
+  background-color: #271f30;
+}
 
 /* .logo {
   cursor:pointer;
