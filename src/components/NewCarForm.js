@@ -56,8 +56,10 @@ const NewCarForm = ({dealerships, postCar}) => {
     }
 
     return (
-    <form onSubmit={handleFormSubmit}>
+    <form id="car-form" onSubmit={handleFormSubmit}>
         <h2>Add a new car</h2>
+        <ul>
+        <li>
         <label>Brand:</label>
         <input 
             type="text" 
@@ -66,6 +68,8 @@ const NewCarForm = ({dealerships, postCar}) => {
             onChange={handleChange}
             value={newCar.brand}
         ></input>
+        </li>
+        <li>
         <label>BodyType:</label>
             <select value={newBodyType} onChange={handleBodyType}>
                 <option>Select a bodytype</option>
@@ -76,6 +80,8 @@ const NewCarForm = ({dealerships, postCar}) => {
                 <option value="HATCHBACK">Hatchback</option>
                 <option value="ESTATE">Estate</option>
             </select>
+        </li>    
+        <li>
         <label>Colour:</label>
         <input 
             type="text" 
@@ -84,6 +90,8 @@ const NewCarForm = ({dealerships, postCar}) => {
             onChange={handleChange}
             value={newCar.colour}
         ></input>
+        </li>
+        <li>
         <label>Year:</label>
         <input 
             type="text" 
@@ -92,6 +100,8 @@ const NewCarForm = ({dealerships, postCar}) => {
             onChange={handleChange}
             value={newCar.carYear}
         ></input>
+        </li>
+        <li>
         <label>Price:</label>
         <input 
             type="text" 
@@ -100,12 +110,18 @@ const NewCarForm = ({dealerships, postCar}) => {
             onChange={handleChange}
             value={newCar.price}
         ></input>
+        </li>
+        <li>
         <label>Dealership:</label>
         <select onChange={selectNewCarDealership}>
                 <option>Select a Dealership</option>
                 {dealershipOptions}
         </select>
-        <button type="submit">Add New Car</button>
+        </li>
+        <li>
+        <button id="add-car-button" type="submit">Add New Car</button>
+        </li>
+        </ul>
     </form>
     )
 }

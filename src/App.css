@@ -1,5 +1,6 @@
 #containersAll {
   margin: 2%;
+  margin-top: 10%;
   background-color: #271f30;
 
 }
@@ -9,10 +10,13 @@
   /* margin: 0%, 2%, 0%, 2%;
   background-color: green;
   background-size: cover; */
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center; 
   list-style: none; 
   background-color:#177e89 ;
 }
@@ -45,7 +49,7 @@ Button#signOutButton {
 }
 
 #navbarlink > li :hover{
-  background-color: #271f30;
+  background-color: lightblue
 }
 
 /* .logo {
