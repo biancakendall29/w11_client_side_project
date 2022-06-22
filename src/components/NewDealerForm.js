@@ -89,7 +89,7 @@ const NewDealerForm = ({postDealer, dealerships, filterDealers, signedInDealer})
             </select>
             </li>
             <li>
-            <button type="submit">SIGN UP</button>
+            <button id="dealer-sign-in-button" type="submit">SIGN UP</button>
             </li>
             </ul>
         </form>
