@@ -47,10 +47,10 @@ const DealerContainer = ({cars, postCar}) => {
     setSignedInDealer(dealers.find(dealer => dealer.id == dealerId));
   }
 
-  useEffect(() => {
-    console.log(signedInDealer);
-    alert("You've signed in as " + signedInDealer.name);
-  }, [signedInDealer])
+//   useEffect(() => {
+//     console.log(signedInDealer);
+//     alert("You've signed in as " + signedInDealer.name);
+//   }, [signedInDealer])
 
     return (
         <>
