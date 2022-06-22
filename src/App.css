@@ -1,10 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 #containersAll {
   margin: 2%;
   background-color: pink;
 }
 
-#navBar {
-  margin: 0%, 2%, 0%, 2%;
-  background-color: green;
-  background-size: cover;
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
 }
+#navBar {
+  /* margin: 0%, 2%, 0%, 2%;
+  background-color: green;
+  background-size: cover; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  list-style: none;
+  background-color:#177e89 ;
+}
+
+.li, button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color:#ebebeb;
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+  padding:0px 20px;
+
+}
+
+li :hover{
+  color: #271f30;
+}
+
+Button#signOutButton {
+  padding:5px 15px;
+  background-color: #271f30;
+  border:none;
+  border-radius: 50px;
+  cursor:pointer;
+  transition: all 0.3s ease 0s;
+}
+
+
+/* .logo {
+  cursor:pointer;
+} */
+
+
+

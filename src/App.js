@@ -139,7 +139,7 @@ const deleteCar = (id) => {
             <li><Link to='/dealerContainer'>Dealer Sign up/Log in</Link></li>
             <li><Link to='/contact'>Contact Us</Link></li>
             <li><Link to='/basket'>Basket</Link></li>
-            <li><button onClick={handleSignOut}>Sign out</button></li>
+            <li><button id="signOutButton" onClick={handleSignOut}>Sign out</button></li>
             
         </ul>
         </div>
