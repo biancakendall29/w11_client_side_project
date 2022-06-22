@@ -2,6 +2,7 @@ import DealershipFilter from "../components/DealershipFilter";
 import { useEffect, useState } from "react";
 import NewCarForm from "../components/NewCarForm";
 import NewDealerForm from "../components/NewDealerForm";
+import '../style_sheets/DealerContainer.css';
 
 const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => {
 

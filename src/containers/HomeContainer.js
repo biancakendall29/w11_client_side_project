@@ -2,6 +2,7 @@ import CarGallery from "../components/CarGallery";
 import CarFilters from "../components/CarFilters";
 import CarList from "../components/CarList";
 import { CarImages } from "../components/CarImages";
+import '../style_sheets/HomeContainer.css';
 
 const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
 

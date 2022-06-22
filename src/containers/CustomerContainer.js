@@ -1,4 +1,5 @@
 import NewCustomerForm from "../components/NewCustomerForm";
+import '../style_sheets/CustomerContainer.css';
 
 const CustomerContainer = ({postCustomer, filterCustomers}) => {
 

@@ -130,9 +130,9 @@ const deleteCar = (id) => {
 
 
   return (
-    <>
-    <div className="nav">
+    <div className="webpage">
     <Router>
+        <div id="navBar">
         <ul>
             <li><Link to='/'>Home</Link></li>  
             <li><Link to='/customerContainer'>Customer Sign up/Log in</Link></li>
@@ -142,7 +142,8 @@ const deleteCar = (id) => {
             <li><button onClick={handleSignOut}>Sign out</button></li>
             
         </ul>
-
+        </div>
+        <div id="containersAll">
         <Routes>
             <Route path="/" element={<HomeContainer cars={cars} signedInCustomer={signedInCustomer} 
             getCarsByFilter={getCarsByFilter} addedCar={addedCar}/>} />
@@ -155,10 +156,9 @@ const deleteCar = (id) => {
             <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>} />
 
         </Routes>
+        </div>
     </Router>
     </div>
-
-    </>
   );
 }
 

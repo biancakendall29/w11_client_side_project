@@ -1,4 +1,5 @@
 import BasketCar from "../components/BasketCar";
+import '../style_sheets/PurchaseContainer.css';
 
 const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, makePurchase}) => {
 
