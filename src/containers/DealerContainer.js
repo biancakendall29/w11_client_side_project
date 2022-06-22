@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import NewCarForm from "../components/NewCarForm";
 import NewDealerForm from "../components/NewDealerForm";
 
-const DealerContainer = ({cars, postCar}) => {
+const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => {
 
     // State for dealerships located here for "dealer admin" methods:
     // NEED TO ADD A DEFAULT VALUE
@@ -42,7 +42,7 @@ const DealerContainer = ({cars, postCar}) => {
                 postDealer={postDealer} />
             <NewCarForm dealerships={dealerships} 
                 postCar={postCar}/>
-            <DealershipFilter dealerships={dealerships} cars={cars} />
+            <DealershipFilter dealerships={dealerships} cars={cars} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>
 
         </>
     );

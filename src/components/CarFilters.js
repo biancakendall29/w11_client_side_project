@@ -1,17 +1,10 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 
-const CarFilters = ({cars, getCarsByFilter}) => {
+const CarFilters = ({ getCarsByFilter}) => {
 
     let [filter, setFilter] = useState("");
 
     const inputValueRef = useRef();
-
-    // Used for testing purposes:
-    // useEffect(() => {
-    //     console.log(`cars: `, cars);
-    //     console.log(inputValueRef.current.value.toUpperCase());
-    // }, [cars]);
-
 
     const handleSearchCars = () => {
         // bodyType is a case-sensitive enum, so toUpperCase() is needed here.

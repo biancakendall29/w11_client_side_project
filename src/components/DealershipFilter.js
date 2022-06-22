@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 import DealershipCarList from "./DealershipCarList";
 
 
-const DealershipFilter = ({dealerships, cars}) => {
+const DealershipFilter = ({dealerships, cars, deleteCar, displayCars, stateCars}) => {
 
-    const [stateCars, setStateCars] = useState([]);
+    
 
     const dealershipOptions = dealerships.map((dealership) => {
         return (
@@ -12,22 +11,11 @@ const DealershipFilter = ({dealerships, cars}) => {
         );
     })
 
-    useEffect(() => {
-        console.log(cars);
-    }, [cars])
-
     const handleChange = (event) => {
         const dealershipId = parseInt(event.target.value);
         let checkedCars = cars.filter(car => car.dealership.id === dealershipId);
-        setStateCars(checkedCars);
+        displayCars(checkedCars);
     }
-
-    useEffect(() => {
-        return (
-            console.log(stateCars)
-        );
-    }, [stateCars])
-
 
     return (
         <>
@@ -36,7 +24,7 @@ const DealershipFilter = ({dealerships, cars}) => {
             <option>Select a Dealership</option>
             {dealershipOptions}
         </select>
-        <DealershipCarList stateCars={stateCars}/>
+        <DealershipCarList stateCars={stateCars} deleteCar={deleteCar}/>
         </>
     );
 }
