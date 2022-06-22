@@ -11,6 +11,8 @@ const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => 
 
     const [dealers, setDealers] = useState([]);
 
+    const [signedInDealer, setSignedInDealer] = useState([]);
+
     useEffect(() => {
         fetch("http://localhost:8081/dealerships")
             .then(response => response.json())
@@ -35,11 +37,28 @@ const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => 
     .then(data => setDealers([...dealers, data]))
   }
 
+//   useEffect(() => {
+//     alert("You've signed up and your unique ID is: " + dealers[dealers.length -1]);
+//   }, [dealers])
+
+  const filterDealers = (dealerId) => {
+    console.log(dealerId);
+    console.log(dealers[0].id);
+    setSignedInDealer(dealers.find(dealer => dealer.id == dealerId));
+  }
+
+  useEffect(() => {
+    console.log(signedInDealer);
+    alert("You've signed in as " + signedInDealer.name);
+  }, [signedInDealer])
+
     return (
         <>
 
             <NewDealerForm dealerships={dealerships}
-                postDealer={postDealer} />
+                postDealer={postDealer}
+                filterDealers={filterDealers}
+                signedInDealer={signedInDealer} />   
             <NewCarForm dealerships={dealerships} 
                 postCar={postCar}/>
             <DealershipFilter dealerships={dealerships} cars={cars} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>
