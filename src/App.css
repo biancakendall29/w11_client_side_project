@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center; 
   list-style: none; 
   background-color:#177e89 ;
 }
@@ -45,7 +45,7 @@ Button#signOutButton {
 }
 
 #navbarlink > li :hover{
-  background-color: #271f30;
+  background-color: lightblue
 }
 
 /* .logo {
