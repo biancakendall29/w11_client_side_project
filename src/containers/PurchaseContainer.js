@@ -33,12 +33,16 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
 
             alert("Hi " + newPurchase.customer.name + ", you've purchased a " + newPurchase.carPurchased.colour + " " + newPurchase.carPurchased.brand +
             " for " + newPurchase.carPurchased.price);
+
+            removeFromBasket();
+
         }   
 
         else {
             alert("Your basket is empty or you're not signed in")
         }
     }
+
     
     return (
         <>

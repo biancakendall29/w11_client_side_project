@@ -80,6 +80,7 @@ const postCustomer = (newCustomer) => {
   )
   .then(response => response.json())
   .then(data => setCustomers([...customers, data]))
+  alert("You've signed up as " + newCustomer.name + " with email " + newCustomer.emailAddress);
 }
 
 const filterCustomers = (signedInCustomerEmail) => {
@@ -88,6 +89,7 @@ const filterCustomers = (signedInCustomerEmail) => {
   filteredCustomer = customers.filter(customer => customer.emailAddress === signedInCustomerEmail);
   setSignedInCustomer(() => filteredCustomer);
   console.log(filteredCustomer);
+  alert("You've signed in as "+ filteredCustomer[0].name);
 }
 
 // Changes cars state based on CarFilters.js.
@@ -100,6 +102,7 @@ const getCarsByFilter = (filter, searchInput) => {
 const handleSignOut = () => {
   setSignedInCustomer([]);
   setSignedInDealer(null);
+  alert("You've signed out");
 }
 
 

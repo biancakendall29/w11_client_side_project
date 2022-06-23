@@ -41,15 +41,6 @@ const NewCustomerForm = ({postCustomer, filterCustomers}) => {
         filterCustomers(stateCustomerEmail);
     }
 
-    // const changeSignUpMessage = () => {
-    //     alert("You've signed up as " + stateCustomer.name)
-    //     return true;
-    // }
-
-    // const changeSignInMessage = () => {
-    //     alert("You've signed in as " + stateCustomerEmail)
-    //     return true;
-    // }
 
     return (
         <>
