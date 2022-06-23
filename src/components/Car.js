@@ -11,7 +11,7 @@ const Car = ({car, addedCar}) => {
             <p>Car Year: {car.carYear}</p>
             <p>Price: {car.price}</p>
             <p>Dealership: {car.dealership.name}, {car.dealership.location}</p>
-            <button id="add-to-basket" onClick={handleAddToBasket}>Add to Basket</button>
+            <button className="add-to-basket" onClick={handleAddToBasket}>Add to Basket</button>
         </div>
     );
 }

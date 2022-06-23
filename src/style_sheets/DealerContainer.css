@@ -253,21 +253,6 @@ div#dealership-filter > select {
     text-align: center;
 }
 
-#sign-out-dealer-button {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 0.8rem;
-    border-radius: 50px;
-    background-color: #271F30;
-    color: #EBEBEB;
-    text-align: center;
-}
-
-form#car-form > ul > li > button:focus {
-    background-color: #177E89;
-    color: #EBEBEB;
-}
-
 #please-sign-in {
     font-size: 2rem;
     font-weight: 700;

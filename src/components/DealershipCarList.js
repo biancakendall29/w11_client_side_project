@@ -12,9 +12,9 @@ const DealershipCarList = ({stateCars, deleteCar}) => {
 
     return (
         <>
-        <h3> List of Dealership's Cars </h3>
-        <hr />
-        {carComponents}
+        <div className="car-item-container">
+            {carComponents}
+        </div>
         </>
     )
 }

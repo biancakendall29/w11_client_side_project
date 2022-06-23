@@ -11,7 +11,7 @@ const CarList = ({cars, addedCar}) => {
 
     return (
         <>
-        <div id="car-item-container">
+        <div className="car-item-container">
         {carComponents}
         </div>
         </>
