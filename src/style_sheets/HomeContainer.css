@@ -91,7 +91,7 @@ Mountbatten Pink: #9A7AA0
 
 /* Car Filter Search Bar Media Query */
 
-@media (max-width: 1800px) {
+@media (max-width: 2000px) {
   #car-filter-search-bar {
     font-size: 10px;
   }
