@@ -26,10 +26,10 @@ Mountbatten Pink: #9A7AA0
 #car-filter-search-bar {
   background-color: #EBEBEB;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   border-radius: 100px;
   border-style: solid;
   border-color: #177E89;
@@ -146,10 +146,10 @@ Mountbatten Pink: #9A7AA0
 
 
 
-
+/* Image gallery styling */
 .slider{
     position: relative;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,17 +166,17 @@ Mountbatten Pink: #9A7AA0
     top:50%;
     right: 32px;
     font-size: 3rem;
-    color: #000;
+    color: #EBEBEB;
     z-index: 10;
     cursor: pointer;
     user-select: none;
   }
   .left-arrow{
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 32px;
     font-size: 3rem;
-    color: #000;
+    color: #EBEBEB;
     z-index: 10;
     cursor: pointer;
     user-select: none;

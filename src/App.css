@@ -1,8 +1,12 @@
 #containersAll {
   margin: 2%;
-  margin-top: 10%;
+  margin-top: 5%;
   background-color: #271f30;
 
+}
+
+button {
+  cursor: pointer;
 }
 
 
