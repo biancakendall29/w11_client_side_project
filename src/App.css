@@ -19,6 +19,7 @@
   align-items: center; 
   list-style: none; 
   background-color:#177e89 ;
+  z-index: 300;
 }
 
 #navbarlink > li{
