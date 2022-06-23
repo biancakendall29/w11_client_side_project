@@ -38,32 +38,50 @@ const DealerContainer = ({cars, postCar, deleteCar, displayCars, stateCars}) => 
     .then(data => setDealers([...dealers, data]))
   }
 
-//   useEffect(() => {
-//     alert("You've signed up and your unique ID is: " + dealers[dealers.length -1]);
-//   }, [dealers])
-
   const filterDealers = (dealerId) => {
     console.log(dealerId);
-    console.log(dealers[0].id);
     setSignedInDealer(dealers.find(dealer => dealer.id == dealerId));
+    console.log(signedInDealer.name);
   }
 
-//   useEffect(() => {
-//     console.log(signedInDealer);
-//     alert("You've signed in as " + signedInDealer.name);
-//   }, [signedInDealer])
+  const signOutDealer = () => {
+    setSignedInDealer(null);
+    console.log(signedInDealer);
+  }
+
+    let getDealersCars = <h3>Please sign in as a dealer to get accessibility to adding/removing cars</h3>
+
+    if (!signedInDealer) {
+        getDealersCars =
+            <h3 id="please-sign-in">Please sign in as a dealer to get accessibility to adding/removing cars</h3>
+    }
+    else {
+        getDealersCars =
+            <>
+            <h3 id="welcome-dealer-name">{`Welcome ${signedInDealer.name}`}</h3>
+            <NewCarForm dealerships={dealerships} 
+                postCar={postCar}/>
+            <DealershipFilter dealerships={dealerships} cars={cars} 
+                              deleteCar={deleteCar} 
+                              displayCars={displayCars} 
+                              stateCars={stateCars}/>
+            </>
+    }
 
     return (
         <>
-            <h2 id="dealer-container-heading">Welcome Dealer !</h2>
+            <ul id="dealer-welcome">
+                <li><h2 id="dealer-container-heading">Welcome Dealer !</h2></li>
+                <li><button id="sign-out-dealer-button" onClick={signOutDealer}>Sign out</button></li> 
+            </ul>
             <NewDealerForm dealerships={dealerships}
                 postDealer={postDealer}
                 filterDealers={filterDealers}
-                signedInDealer={signedInDealer} />   
-            <NewCarForm dealerships={dealerships} 
+                signedInDealer={signedInDealer} />      
+            {/* <NewCarForm dealerships={dealerships} 
                 postCar={postCar}/>
-            <DealershipFilter dealerships={dealerships} cars={cars} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>
-
+            <DealershipFilter dealerships={dealerships} cars={cars} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/> */}
+            {getDealersCars}
         </>
     );
 }

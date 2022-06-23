@@ -239,3 +239,47 @@ div#dealership-filter > select {
     border-width: 0.3rem;
     border-radius: 50px;
 }
+
+/* sign out button  */
+
+#dealer-welcome {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#dealer-welcome > h2 {
+    text-align: center;
+}
+
+#sign-out-dealer-button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.8rem;
+    border-radius: 50px;
+    background-color: #271F30;
+    color: #EBEBEB;
+    text-align: center;
+}
+
+form#car-form > ul > li > button:focus {
+    background-color: #177E89;
+    color: #EBEBEB;
+}
+
+#please-sign-in {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 1rem;
+    color: #EBEBEB;
+    text-align: center;
+}
+
+#welcome-dealer-name {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 1rem;
+    color: #EBEBEB;
+    text-align: center;
+}
