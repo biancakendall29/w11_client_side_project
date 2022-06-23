@@ -11,7 +11,6 @@ const CarList = ({cars, addedCar}) => {
 
     return (
         <>
-        <hr />
         <div id="car-item-container">
         {carComponents}
         </div>
