@@ -82,6 +82,28 @@ Mountbatten Pink: #9A7AA0
   border-radius: 50px;
 }
 
+/* Car Filter Search Bar Media Query */
+
+@media (max-width: 1440px) {
+  #car-filter-search-bar > input {
+    width: 30%;
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+
+  #car-filter-search-bar > button {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #car-filter-search-bar > select {
+    font-size: 2rem;
+    border-width: 0.2rem;
+  }
+
+}
+
 /* LIST OF CAR ITEMS */
 .car-item-container {
   display: flex;
