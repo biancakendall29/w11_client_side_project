@@ -34,18 +34,19 @@ Mountbatten Pink: #9A7AA0
   border-style: solid;
   border-color: #177E89;
   border-width: 0.5rem;
+  font-size: 16px;
 }
 
 #car-filter-text-box {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 #car-filter-search-bar > input {
   width: 35%;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 600;
   padding: 0.5rem;
   color: #177E89;
@@ -54,11 +55,11 @@ Mountbatten Pink: #9A7AA0
 }
 
 #car-filter-search-bar > button {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 600;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 0.8rem;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 0.8%;
   border-radius: 50px;
   background-color: #271F30;
   color: #EBEBEB;
@@ -70,12 +71,12 @@ Mountbatten Pink: #9A7AA0
 }
 
 #car-filter-search-bar > select {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: 700;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1%;
+  margin-right: 1%;
   color: #177E89;
-  padding: 0.3rem;
+  padding: 0.3%;
   border-style: solid;
   border-color: #271F30;
   border-width: 0.3rem;
@@ -84,24 +85,16 @@ Mountbatten Pink: #9A7AA0
 
 /* Car Filter Search Bar Media Query */
 
-@media (max-width: 1440px) {
-  #car-filter-search-bar > input {
-    width: 30%;
-    font-size: 2rem;
-    padding: 0.5rem;
+@media (max-width: 1800px) {
+  #car-filter-search-bar {
+    font-size: 10px;
   }
+}
 
-  #car-filter-search-bar > button {
-    font-size: 2rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+@media (max-width: 1200px) {
+  #car-filter-search-bar {
+    font-size: 5px;
   }
-
-  #car-filter-search-bar > select {
-    font-size: 2rem;
-    border-width: 0.2rem;
-  }
-
 }
 
 /* LIST OF CAR ITEMS */
