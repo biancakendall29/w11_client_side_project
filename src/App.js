@@ -153,7 +153,6 @@ const deleteCar = (id) => {
                    signedInCustomer={signedInCustomer}
                    makePurchase={makePurchase}/>} />
             <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>} />
-
         </Routes>
         </div>
     </Router>
