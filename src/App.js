@@ -22,6 +22,10 @@ const [purchases, setPurchases] = useState([]);
 
 const [stateCars, setStateCars] = useState([]);
 
+const [signedInDealer, setSignedInDealer] = useState([]);
+
+const [dealers, setDealers] = useState([]);
+
 useEffect(() => {
   fetch("http://localhost:8081/cars")
     .then(response => response.json())
@@ -43,6 +47,26 @@ useEffect(() => {
   .then(response => response.json())
   .then(data => setPurchases(data))
 }, [])
+
+// loading dealers from backend
+
+useEffect(() => {
+  fetch("http://localhost:8081/dealers")
+      .then(response => response.json())
+      .then(data => setDealers(data))
+}, [])
+
+const postDealer = (newDealer) => {
+  fetch("http://localhost:8081/dealers/new",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newDealer)    
+
+  }
+)
+.then(response => response.json())
+.then(data => setDealers([...dealers, data]))
+}
 
 // adding a new customer to database
 
@@ -75,7 +99,9 @@ const getCarsByFilter = (filter, searchInput) => {
 
 const handleSignOut = () => {
   setSignedInCustomer([]);
+  setSignedInDealer(null);
 }
+
 
 // added car method 
 
@@ -88,8 +114,6 @@ const removeFromBasket = () => {
 }
 
 const makePurchase = (newPurchase) => {
-  // console.log("Made a purchase");
-  // console.log(newPurchase);
   fetch("http://localhost:8081/purchases/new",
   {
     method: "POST",
@@ -128,6 +152,13 @@ const deleteCar = (id) => {
 
 }
 
+const filterDealers = (dealerId) => {
+  console.log(dealerId);
+  setSignedInDealer(dealers.find(dealer => dealer.id == dealerId));
+  console.log(signedInDealer.name);
+}
+
+
 
   return (
     <div className="webpage">
@@ -152,7 +183,10 @@ const deleteCar = (id) => {
                    removeFromBasket={removeFromBasket} 
                    signedInCustomer={signedInCustomer}
                    makePurchase={makePurchase}/>} />
-            <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar} deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}/>} />
+            <Route path="/dealerContainer" element={<DealerContainer cars={cars} postCar={postCar} 
+                    deleteCar={deleteCar} displayCars={displayCars} stateCars={stateCars}
+                    signedInDealer={signedInDealer} filterDealers={filterDealers}
+                    postDealer={postDealer}/>} />
         </Routes>
         </div>
     </Router>
