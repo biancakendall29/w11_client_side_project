@@ -66,6 +66,7 @@ const postDealer = (newDealer) => {
 )
 .then(response => response.json())
 .then(data => setDealers([...dealers, data]))
+alert("You've signed up as a dealer. Your unique id is " + (dealers[dealers.length-1].id + 1))
 }
 
 // adding a new customer to database
@@ -139,6 +140,7 @@ const postCar = (newCar) => {
   // update things locally
   .then(response => response.json())
   .then(savedCar => setCars([...cars, savedCar]))
+  alert("Car added !")
 }
 
 const displayCars = (checkedCars) => {
