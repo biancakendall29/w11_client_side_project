@@ -171,8 +171,9 @@ Mountbatten Pink: #9A7AA0
   }
   
   .image{
-    width: 1000px;
-    height: 600px;
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
     border-radius: 10px;
   }
   
