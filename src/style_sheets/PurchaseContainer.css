@@ -70,3 +70,12 @@ div#basket-car > button {
     background-color: #CAD2C5;
     color: #271F30;
 }
+
+#purchase-status {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 1rem;
+    color: #271F30;
+    background-color: #CAD2C5;
+    padding-bottom: 1rem;
+}

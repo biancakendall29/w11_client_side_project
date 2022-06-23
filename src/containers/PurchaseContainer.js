@@ -21,14 +21,6 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
 
     const handleMakePurchase = () => {
         if (signedInCustomer[0] && selectedCars[0]) {
-            // let formattedCar = 
-            // {
-            //     bodytype: selectedCars[0].bodytype,
-            //     brand: selectedCars[0].brand,
-            //     colour: selectedCars[0].colour,
-            //     carYear: selectedCars[0].carYear,
-            //     price: selectedCars[0].price
-            // }
             
             let newPurchase = 
             {
@@ -36,8 +28,13 @@ const PurchaseContainer = ({selectedCars, removeFromBasket, signedInCustomer, ma
               customer: signedInCustomer[0],
               carPurchased: selectedCars[0]
             }
+
             makePurchase(newPurchase);
-        }
+
+            alert("Hi " + newPurchase.customer.name + ", you've purchased a " + newPurchase.carPurchased.colour + " " + newPurchase.carPurchased.brand +
+            " for " + newPurchase.carPurchased.price);
+        }   
+
         else {
             alert("Your basket is empty or you're not signed in")
         }
