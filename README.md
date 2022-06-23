@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Manual Traders Client-End
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Imports 
+
+### `npm i react-icons`
+### `npm i react-router-dom`
 
 ## Available Scripts
 
