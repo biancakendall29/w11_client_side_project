@@ -11,7 +11,7 @@ const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
         userName = signedInCustomer[0].name;
     }
     else {
-        userName = "User";
+        userName = "";
     }
     
     
