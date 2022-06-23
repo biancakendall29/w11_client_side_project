@@ -4,7 +4,17 @@
   background-color: #271f30;
 
 }
+@media (max-width: 1800px) {
+  #navBar {
+    font-size: 10px;
+  }
+}
 
+@media (max-width: 1200px) {
+  #navBar {
+    font-size: 5px;
+  }
+}
 button {
   cursor: pointer;
 }
@@ -28,7 +38,7 @@ button {
 
 #navbarlink > li{
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 4em;
   color:#ebebeb;
   list-style: none;
   flex-wrap: wrap;
@@ -40,7 +50,8 @@ button {
 
 #navbarlink > li{
   display: inline-block;
-  padding:0px 15px;
+  padding:0px 20px;
+
 }
 
 
@@ -49,7 +60,7 @@ Button#signOutButton {
   border:none;
   border-radius: 50px;
   cursor:pointer;
-  font-size: 1.5rem;
+  font-size: 1em;
   font-weight: 600;
   transition: all 0.3s ease 0s;
 }
