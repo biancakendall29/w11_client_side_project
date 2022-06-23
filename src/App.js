@@ -22,7 +22,7 @@ const [purchases, setPurchases] = useState([]);
 
 const [stateCars, setStateCars] = useState([]);
 
-const [signedInDealer, setSignedInDealer] = useState([]);
+const [signedInDealer, setSignedInDealer] = useState(null);
 
 const [dealers, setDealers] = useState([]);
 

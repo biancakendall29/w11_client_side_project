@@ -24,11 +24,9 @@ Mountbatten Pink: #9A7AA0
 @media (max-width: 1200px) {
   #welcome-heading {
     font-size: 32px;
-    margin-top: 20%;
-  }
-
+    margin-top: 8%;
+    }
 }
-
 
 /* CAR FILTER SEARCH BAR: */
 #car-filter-search-bar {
