@@ -19,6 +19,7 @@ const HomeContainer = ({cars, signedInCustomer, getCarsByFilter, addedCar}) => {
     return (
         <div id="home-container">
         <h2 id="welcome-heading">{`Welcome to Manual Traders ${userName} !`}</h2>
+        <hr />
         <CarGallery slides={CarImages}/>
         <hr />
         <CarFilters cars={cars} getCarsByFilter={getCarsByFilter}/>
